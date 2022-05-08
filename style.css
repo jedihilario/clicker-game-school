@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    background-color: #080808;
+    color: #fff;
+}
+
+.top-bar__counter {
+    padding: 6px;
+}
+
+.game-container {
+    display: flex;
+    width: 100vw;
+    height: 400px;
+}
+
+.clicker-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 2;
+}
+
+.shop {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 16px;
+}
+
+.shop-element {
+    display: flex;
+}
+
+.shop-element > img {
+    width: 72px;
+    height: 72px;
+    margin-right: 4px;
+}
+
+.element__info {
+    flex-grow: 1;
+}
+
+#clicker {
+    box-sizing: border-box;
+    width: 9rem;
+    height: 10rem;
+    border-radius: 100px;
+    border: none;
+    outline: none;
+    animation: 3s girar linear infinite;
+    background-color: #A77AC4;
+}
+
+#shop-button {
+    margin-right: 8px;
+}
+
+#shop-button:hover {
+    cursor: pointer;
+}
+
+@keyframes parpadear {
+    0% {
+        background-color: #080808;
+    }
+    25% {
+        background-color: #f00;
+    }
+    50% {
+        background-color: #080808;
+    }
+    75% {
+        background-color: #f00;
+    }
+    100% {
+        background-color: #080808;
+    }
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
