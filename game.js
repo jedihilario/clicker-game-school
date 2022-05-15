@@ -50,9 +50,20 @@ const clicker = document.getElementById('clicker');
 const contador = document.getElementById('contador');
 const shop = document.querySelector('.shop');
 
+const cursor = new ShopElement('Cursor', 'img/fotito.jpg', 1, 2000, 15);
+
+const createCursorElement = new Promise((resolve, reject) => {
+    setInterval(() => {
+        if(Number(contador.innerHTML) >= 15) {
+            resolve();
+        }
+    }, 500);
+});
+
 clicker.addEventListener('click', () => {
     contador.innerHTML = Number(contador.innerHTML) + 1;
 });
 
-const cursor = new ShopElement('Cursor', 'img/fotito.jpg', 1, 2000, 15);
-shop.appendChild(cursor.createElement());
+createCursorElement.then(() => {
+    shop.appendChild(cursor.createElement()); 
+});

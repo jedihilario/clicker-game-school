@@ -50,6 +50,10 @@
     flex-grow: 1;
 }
 
+.shop-element:hover {
+    cursor: pointer;
+}
+
 #clicker {
     box-sizing: border-box;
     width: 9rem;
