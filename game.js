@@ -9,7 +9,7 @@ class ShopElement {
         this.intervals = [];
     }
 
-    set value(newValue) {
+    set increment(newValue) {
         this.incrementValue = newValue;
     }
 
@@ -37,18 +37,26 @@ class ShopElement {
             if(Number(contador.innerHTML) >= this.price) {
                 this.intervals.push(this.createInterval(this.incrementTime, this.incrementValue));
                 contador.innerHTML = Number(contador.innerHTML) - this.price;
-                this.price = Math.floor(this.price * 1.25);
+                this.price = Math.floor(this.price * 1.33);
                 document.getElementById('element__price').innerHTML = this.price;
             }
         });
 
         return container;
     }
+
+    upgradeELement() {
+        this.intervals.forEach(element => {
+            clearInterval(element);
+            this.intervals.push(this.createInterval(this.incrementTime, this.incrementValue));
+        });
+    }
 }
 
 const clicker = document.getElementById('clicker');
 const contador = document.getElementById('contador');
-const shop = document.querySelector('.shop');
+const shopElements = document.querySelector('.shop__elements');
+const shopUpgrades = document.querySelector('.shop__upgrades');
 
 const cursor = new ShopElement('Cursor', 'img/fotito.jpg', 1, 2000, 15);
 
@@ -65,5 +73,5 @@ clicker.addEventListener('click', () => {
 });
 
 createCursorElement.then(() => {
-    shop.appendChild(cursor.createElement()); 
+    shopElements.appendChild(cursor.createElement()); 
 });

@@ -36,6 +36,14 @@
     padding: 16px;
 }
 
+.shop__elements {
+    flex-grow: 1;
+}
+
+.shop__upgrades {
+    flex-grow: 1;
+}
+
 .shop-element {
     display: flex;
 }
@@ -71,24 +79,6 @@
 
 #shop-button:hover {
     cursor: pointer;
-}
-
-@keyframes parpadear {
-    0% {
-        background-color: #080808;
-    }
-    25% {
-        background-color: #f00;
-    }
-    50% {
-        background-color: #080808;
-    }
-    75% {
-        background-color: #f00;
-    }
-    100% {
-        background-color: #080808;
-    }
 }
 
 @keyframes girar {
